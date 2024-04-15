@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
+
 const MediaRow = (props) => {
   const {item} = props;
   return (
-    <tr key={item.media_id}>
+    <tr>
       <td>
-        <img src={item.thumbnail} alt={item.title}/>
+        <img src={item.thumbnail} alt={item.title} />
       </td>
       <td>{item.title}</td>
       <td>{item.description}</td>
@@ -12,6 +14,10 @@ const MediaRow = (props) => {
       <td>{item.media_type}</td>
     </tr>
   );
+};
+
+MediaRow.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default MediaRow;
