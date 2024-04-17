@@ -7,7 +7,7 @@ const SingleView = (props) => {
     <>
       <dialog open={!!selectedItem}>
         <p>
-          <button onClick={handleClick}>Close</button>
+          <Button text='Close' handleClick={handleClick} />
         </p>
         {selectedItem && (
           <>
