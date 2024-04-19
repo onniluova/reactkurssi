@@ -3,6 +3,7 @@ import Home from './components/home';
 import {Link, Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import {Profile} from "./components/Profile.jsx";
 import Upload from "./components/Upload.jsx";
+import Single from "./components/Single.jsx";
 
 const App = () => {
   return (
