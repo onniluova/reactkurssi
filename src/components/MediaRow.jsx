@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import Button from './UI/Button';
 
 const MediaRow = (props) => {
   const {item, setSelectedItem} = props;
+
+  const handleClick = () => {
+    setSelectedItem(item);
+  };
 
   return (
     <tr>
@@ -26,5 +31,3 @@ MediaRow.propTypes = {
 };
 
 export default MediaRow;
-
-

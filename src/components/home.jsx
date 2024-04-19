@@ -40,7 +40,7 @@ const mediaArray = [
 ];
 
 const Home = () => {
-  const [selectedItem, setSelectedItem] = useState(mediaArray[0]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   console.log(selectedItem);
 
@@ -61,7 +61,11 @@ const Home = () => {
         </thead>
         <tbody>
         {mediaArray.map((item) => (
-          <MediaRow key={item.media_id} item={item} setSelectedItem={setSelectedItem} />
+          <MediaRow
+            key={item.media_id}
+            item={item}
+            setSelectedItem={setSelectedItem}
+          />
         ))}
         </tbody>
       </table>
