@@ -1,9 +1,9 @@
 import './App.css';
-import Home from './components/home';
+import Home from './views/home.jsx';
 import {Link, Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import {Profile} from "./components/Profile.jsx";
-import Upload from "./components/Upload.jsx";
-import Single from "./components/Single.jsx";
+import {Profile} from "./views/Profile.jsx";
+import Upload from "./views/Upload.jsx";
+import Single from "./views/Single.jsx";
 
 const App = () => {
   return (
