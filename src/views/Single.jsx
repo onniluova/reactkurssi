@@ -1,15 +1,29 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from "react-router-dom"
+import SingleView from "../components/SingleView"
+import mediaArray from "../data/media.js"
 
 const Single = () => {
-  const location = useLocation();
-  const params = useParams();
-  console.log("Location:" + location);
+  const location = useLocation()
+  const navigate = useNavigate()
+  const params = useParams()
 
-  console.log("Params: " + params);
+  const id = Number(params.id)
 
-  return <>
-  <h2 className="text-3xl">ID: {params.id}</h2>
-  </>
+  let item;
+  if (!location.state?.item) {
+    item = mediaArray.find(({media_id}) => Number(media_id) === id)
+  } else {
+    item = location.state.item
+  }
+
+  if(!item) {
+    return <>Media not found</>
+  }
+
+  return <SingleView
+    selectedItem={item}
+    setSelectedItem={() => navigate(-1)}
+  />
 }
 
-export default Single;
+export default Single

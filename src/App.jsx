@@ -1,28 +1,26 @@
 import './App.css';
 import Home from './views/home.jsx';
-import {Link, Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import {Profile} from "./views/Profile.jsx";
-import Upload from "./views/Upload.jsx";
-import Single from "./views/Single.jsx";
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {Profile} from './views/Profile';
+import Upload from './views/Upload';
+import Layout from './views/Layout';
+import Single from './views/Single';
+import Login from './views/Login';
 
 const App = () => {
   return (
-    <>
-      <Router>
-        <h1>My App</h1>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/profile">Profiili</Link>
-          <Link to="/upload">Lataa</Link>
-        </nav>
-        <Routes>
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='/profile' element={<Profile/>}></Route>
-          <Route path='/upload' element={<Upload/>}></Route>
-          <Route path="/meida/:id" element={<Single />}></Route>
-        </Routes>
-      </Router>
-    </>
+    <Router basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/media/:id" element={<Single />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
+
 export default App;
