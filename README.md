@@ -1,1 +1,1 @@
-Servu: https://users.metropolia.fi/~onniluo/hooks/
+Servu: https://users.metropolia.fi/~onniluo/custom-hooks/
